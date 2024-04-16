@@ -1,5 +1,4 @@
 #Propriedades (normalmente utilizada para criar uma regra() de acesso para determinado atributo)
-
 class Foo:
 
     def __init__(self,x= None):
@@ -12,18 +11,19 @@ class Foo:
     
     @x.setter # isso é feito para atribuir um valor para a prpriedade
     def x(self, value): # isso não é um metodo, a gente trabalha com ele como se fosse uma atributo
-        self.x+value
-
-
+        self._x+=value
+        
     @x.deleter # excluindo a propriedade 
     def x(self):
         self._x=0 # isso só foi um exemplo, colocando o -1
 
-
+    def __str__(self) :
+        return f"valor: {self.x}"
     
 foo= Foo(10)
 print(foo.x)
-foo.x=10
+foo.x=30
 print(foo.x)
 del foo.x
 print(foo.x)
+print(foo)
