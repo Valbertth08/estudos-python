@@ -44,7 +44,7 @@ class ControleArCondicionado(Controle_Remoto):
 
     @property
     def marca(self):
-        return "LG"
+        return "SAMSUNG"
 
 
 
